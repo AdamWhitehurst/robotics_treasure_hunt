@@ -1,0 +1,8 @@
+prefix=/home/adam/wsfinal/install
+
+Name: husky_msgs
+Description: Description of husky_msgs
+Version: 0.2.7
+Cflags: -I/home/adam/wsfinal/install/include
+Libs: -L/home/adam/wsfinal/install/lib 
+Requires: std_msgs message_runtime

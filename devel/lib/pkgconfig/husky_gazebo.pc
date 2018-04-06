@@ -1,0 +1,8 @@
+prefix=/home/adam/wsfinal/devel
+
+Name: husky_gazebo
+Description: Description of husky_gazebo
+Version: 0.2.6
+Cflags: 
+Libs: -L/home/adam/wsfinal/devel/lib 
+Requires: 

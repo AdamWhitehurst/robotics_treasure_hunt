@@ -1,0 +1,8 @@
+prefix=/home/adam/wsfinal/devel
+
+Name: logical_camera_plugin
+Description: Description of logical_camera_plugin
+Version: 0.0.0
+Cflags: -I/home/adam/wsfinal/devel/include -I/home/adam/wsfinal/src/logical_camera_plugin/include
+Libs: -L/home/adam/wsfinal/devel/lib 
+Requires: gazebo_plugins gazebo_ros roscpp message_runtime
