@@ -1,16 +1,17 @@
 #include <ros/ros.h>
-#include <vector.h>
-#include <ROSLogicalCameraPlugin.hh>
+#include <vector>
+#include <string>
+#include <logical_camera_plugin/logicalImage.h>
 
-vector<logicalImage> storeTreasure;
+std::vector<logical_camera_plugin::logicalImage> storeTreasure;
 
-void getScan(const logical_camera_plugin/logicalImage){
+void getScan(const logical_camera_plugin::logicalImage &scanMsg){
 
 	bool readyToAdd = true;
 
 	for(int i = 0; i < storeTreasure.size(); i++){
 
-		if (scanMsg.pose_pose_x == storeTreasure[i].pose_pose_x && scanMsg.pose_pose_y == storeTreasure[i].pose_pose_y && scanMsg.pose_rot.x == storeTreasure[i].pose.rot.x){
+		if (scanMsg.pose_pos_x == storeTreasure[i].pose_pos_x && scanMsg.pose_pos_y == storeTreasure[i].pose_pos_y && scanMsg.pose_rot_x == storeTreasure[i].pose_rot_x){
 
 			ROS_INFO_STREAM("Did not add repeat Treasure");
 			readyToAdd = false;
@@ -19,14 +20,14 @@ void getScan(const logical_camera_plugin/logicalImage){
 
 	}
 
-	tempMsg = scanMsg.modelName;
+	std::string tempMsg = scanMsg.modelName;
 
 	if(readyToAdd == true){
 	
 		if(tempMsg[1] == 'r' && tempMsg[2] == 'e' && tempMsg[3] == 'a'){
 
-			storeTreasure.pushback(scanMsg);
-			ROS_INFO_STREAM("Added Treasure " \0);
+			storeTreasure.push_back(scanMsg);
+			ROS_INFO_STREAM("Added Treasure ");
 			ROS_INFO_STREAM(scanMsg);
 			
 		}
